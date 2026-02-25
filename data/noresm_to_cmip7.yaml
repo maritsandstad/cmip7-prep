@@ -145,9 +145,10 @@ variables:
     table: land
     units: "kg m-2"
     dims: [time, lat, lon]
-    formula: (TOTVEGC)/1000.0
+    formula: FATES_VEGC*FATES_FRAC
     sources:
-      - noresm_var: TOTVEGC
+      - noresm_var: FATES_VEGC
+      - noresm_var: FATES_FRAC
 
   dcw_tavg-u-hxy-lnd:
     table: land
@@ -502,10 +503,11 @@ variables:
     table: land
     units: "kg m-2 s-1"
     dims: [time, lat, lon]
-    formula: NPP/1000.0
+    formula: FATES_NPP * FATES_FRAC
     positive: down
     sources:
-      - noresm_var: NPP
+      - noresm_var: FATES_NPP
+      - noresm_var: FATES_FRAC
 
   nVeg_tavg-u-hxy-lnd:
     table: land
